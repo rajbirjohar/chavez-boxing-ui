@@ -53,9 +53,9 @@
     position: absolute;
     inset: 0;
     z-index: -2;
-    backdrop-filter: brightness(40%) blur(3px) grayscale(0.5);
+    -webkit-backdrop-filter: brightness(40%) blur(3px) grayscale(0.2);
+    backdrop-filter: brightness(40%) blur(3px) grayscale(0.2);
   }
-
   .heroimage {
     position: absolute;
     display: block;
@@ -94,6 +94,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--gutter-lg);
+    &.pricing {
+      margin-top: 10px;
+    }
   }
   .price {
     font-size: 48px;
@@ -126,6 +129,23 @@
   }
 }
 
+.best {
+  position: relative;
+  top: -15px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -4px; /* !importanté */
+    border-radius: 16px; /* !importanté */
+    background: linear-gradient(to bottom right, var(--brand-100), var(--card-bg));
+  }
+}
+
 .cta {
   display: inline-flex;
   align-items: center;
@@ -150,5 +170,15 @@
         font-size: 48px;
       }
     }
+  }
+  .section {
+    .cards {
+      &.pricing {
+        margin-top: 0;
+      }
+    }
+  }
+  .best {
+    top: 0;
   }
 }
