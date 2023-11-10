@@ -21,7 +21,9 @@
         border: none;
       }
     }
-    .section {
+    .section,
+    .ingredients,
+    .instructions {
       & > * + * {
         margin-block-start: 1rem;
       }

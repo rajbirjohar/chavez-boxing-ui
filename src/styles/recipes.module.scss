@@ -14,9 +14,17 @@
     display: flex;
     flex-direction: column;
     max-width: var(--prose-width);
+    gap: var(--gutter);
     .recipe {
       .title {
         color: inherit;
+      }
+      .description {
+        // clamp and truncate to two lines
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }

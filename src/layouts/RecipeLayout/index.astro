@@ -44,11 +44,11 @@ import { ArrowLeftToLine } from "lucide-astro";
         <hr />
         <section class={styles.section}>
           <h2>Ingredients</h2>
-          <div set:html={recipe.ingredients_html} />
+          <div set:html={recipe.ingredients_html} class={styles.ingredients} />
         </section>
         <section class={styles.section}>
           <h2>Instructions</h2>
-          <div set:html={recipe.instructions_html} />
+          <div set:html={recipe.instructions_html} class={styles.instructions} />
         </section>
       </article>
     </main>
