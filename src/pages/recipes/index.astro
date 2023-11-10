@@ -9,7 +9,7 @@ import Layout from "@/layouts/Layout/index.astro";
 import styles from "@/styles/recipes.module.scss";
 
 const res = await fetch(`
-    ${import.meta.env.PAYLOAD_API_URL}/recipes
+    ${import.meta.env.PUBLIC_PAYLOAD_API_URL}/recipes
 `);
 const recipes = await res.json();
 ---

@@ -13,7 +13,7 @@ import RecipeLayout from "@/layouts/RecipeLayout/index.astro";
 
 export async function getStaticPaths() {
   let data = await fetch(`
-  ${import.meta.env.PAYLOAD_API_URL}/recipes  
+  ${import.meta.env.PUBLIC_PAYLOAD_API_URL}/recipes  
 `);
   let recipes = await data.json();
 
