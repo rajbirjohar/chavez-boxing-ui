@@ -4,7 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
 import Header from "@/core/Header/index.astro";
 import Footer from "@/core/Footer/index.astro";
 import styles from "./styles.module.scss";
@@ -28,7 +27,6 @@ import "@/styles/globals.scss";
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width" />
     <title>Chavez Boxing Gym {title && `| ${title}`}</title>
-    <ViewTransitions />
   </head>
   <body>
     <Header />

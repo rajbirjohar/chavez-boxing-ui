@@ -1,44 +1,79 @@
 .footer {
-  border-top: var(--border);
+  width: 100%;
+  background-color: var(--footer-background);
+  display: flex;
+  flex-direction: column;
   .content {
     width: 100%;
     max-width: var(--main-content-width);
-    padding: 100px var(--gutter-md);
+    padding: 40px var(--gutter-md);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--gutter-xl);
-    .column {
+    display: flex;
+    flex-direction: column;
+    .logo {
       flex: 1;
-      font-size: 18px;
-      & > * + * {
-        margin-block-start: 1rem;
-      }
-      svg {
-        min-width: 24px;
-        min-height: 24px;
-        max-width: 24px;
-        max-height: 24px;
-      }
-      .link {
-        display: flex;
-        align-items: center;
-        gap: var(--gutter-sm);
-        border-bottom: none;
-        font-weight: 600;
-      }
+      margin-bottom: 40px;
+      font-weight: 600;
+      font-size: var(--font-lg);
+    }
+    .links {
+      --grid-min: 24%;
+      --menu-margin: clamp(10px, 4vw, 20px);
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--grid-min), 1fr));
+      grid-gap: var(--gutter-xl);
+      border-bottom: var(--border);
+      padding-bottom: 60px;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
       .hours {
         padding: 0;
-        list-style: none;
         .day {
+          list-style-type: none;
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          gap: var(--gutter-sm);
-          span {
-            font-weight: bold;
-          }
+          justify-content: space-between;
         }
+      }
+    }
+  }
+  .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--main-content-width);
+    padding: 20px var(--gutter-md) 80px var(--gutter-md);
+    margin: 0 auto;
+    small {
+      font-size: var(--font-sm);
+    }
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+  border-bottom: none;
+  font-weight: 500;
+  svg {
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+  }
+}
+
+@media (max-width: 668px) {
+  .footer {
+    .content {
+      .links {
+        --grid-min: 50%;
       }
     }
   }

@@ -1,5 +1,6 @@
 ---
 import styles from "./styles.module.scss";
+import { Menu } from "lucide-astro";
 
 const directories = [
   {
@@ -29,12 +30,39 @@ const directories = [
 ];
 ---
 
-<header class={styles.header}>
+<header class={styles.header} id="header">
   <nav class={styles.nav}>
-    {
-      directories.map((directory) => (
-        <a href={directory.path}>{directory.name}</a>
-      ))
-    }
+    <div class={styles.links}>
+      {
+        directories.map((directory) => (
+          <a href={directory.path} class={styles.link} id="link">
+            {directory.name}
+          </a>
+        ))
+      }
+    </div>
+    <button class={styles.toggle} aria-label="Toggle menu" id="toggle">
+      <Menu />
+    </button>
   </nav>
 </header>
+
+<script define:vars={{ styles }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector("#toggle");
+    const header = document.querySelector("#header");
+
+    // Select each link to close the menu when clicked
+    const links = document.querySelectorAll("#link");
+    
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        header.classList.remove(`${styles.active}`);
+      });
+    });
+
+    toggle.addEventListener("click", () => {
+      header.classList.toggle(`${styles.active}`);
+    });
+  });
+</script>

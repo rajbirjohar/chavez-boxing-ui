@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout/index.astro";
 import styles from "@/styles/home.module.scss";
 import hero from "@/assets/hero.png";
 import { Image } from "astro:assets";
-import { BadgeCheck } from "lucide-astro";
+import { BadgeCheck, ExternalLink } from "lucide-astro";
 import Card from "@/core/Card/index.astro";
 import clsx from "clsx";
 ---
@@ -18,6 +18,7 @@ import clsx from "clsx";
       </h1>
       <p class={styles.subtitle}>Where Grit Meets Grace</p>
     </div>
+    <div class={styles.gradient}></div>
     <div class={styles.overlay}></div>
     <Image
       src={hero}
@@ -25,7 +26,12 @@ import clsx from "clsx";
       class={styles.heroimage}
     />
   </section>
-  <section class={styles.section}>
+  <section
+    class={styles.section}
+    style={{
+      borderTop: "none",
+    }}
+  >
     <h1 id="programs" class={styles.title}>What We Offer</h1>
     <p class={styles.prose}>
       We offer a variety of programs to suit your needs. Whether you're looking
@@ -180,7 +186,12 @@ import clsx from "clsx";
       and tested, where you'll learn that being a champion starts with showing
       up - for yourself and for your team.
     </p>
-    <p class={styles.prose}>
+    <p
+      class={styles.prose}
+      style={{
+        textAlign: "left",
+      }}
+    >
       <strong>
         Take the step. Commit to the core of boxing. No fluff, no distractions -
         just you, the bag, and a band of brothers and sisters who will never let
@@ -194,6 +205,41 @@ import clsx from "clsx";
       }}
     >
       <button class={styles.cta}>Step Into The Ring</button>
+    </a>
+  </section>
+  <section class={styles.section}>
+    <h1 class={styles.title}>Join the Fight</h1>
+    <p
+      class={styles.prose}
+      style={{
+        textAlign: "left",
+      }}
+    >
+      The Chavez Youth and Community Foundation, closely allied with the Chavez
+      Boxing Foundation, stands as a beacon of hope for youth in challenging
+      environments. Our mission is clear: to offer boxing as a constructive
+      outlet, steering young minds away from destructive paths and towards
+      discipline, confidence, and motivation.
+    </p>
+    <p
+      class={styles.prose}
+      style={{
+        textAlign: "left",
+      }}
+    >
+      Your support fuels our dedication to these young individuals, helping us
+      provide not just boxing training, but also mentorship and guidance towards
+      a brighter future.
+    </p>
+    <a
+      href="https://www.chavezyouth.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        borderBottom: "none",
+      }}
+    >
+      <button class={styles.cta}>Join The Fight <ExternalLink /></button>
     </a>
   </section>
 </Layout>
