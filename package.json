@@ -1,0 +1,30 @@
+{
+  "name": "chavez-boxing-ui",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/mdx": "^1.1.3",
+    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/vercel": "^3.8.2",
+    "astro": "^3.4.4",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "lucide": "^0.267.0",
+    "lucide-astro": "^0.265.0",
+    "sass": "^1.69.5",
+    "sharp": "^0.32.6",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.11.1"
+  }
+}

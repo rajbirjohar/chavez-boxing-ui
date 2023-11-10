@@ -1,0 +1,125 @@
+.hero {
+  width: 100vw;
+  height: var(--main-content-min-height);
+  position: relative;
+  isolation: isolate;
+  .content {
+    padding: 0 var(--gutter-md);
+    max-width: var(--main-content-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: var(--gutter);
+    .title {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--light);
+      text-align: center;
+      .intro {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--light);
+      }
+    }
+    .subtitle {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--light);
+    }
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: brightness(40%) blur(3px) grayscale(0.5);
+  }
+  .heroimage {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.section {
+  min-height: var(--main-content-min-height);
+  padding: 72px var(--gutter-md);
+  max-width: var(--main-content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gutter-lg);
+  border-top: var(--border);
+  .title {
+    text-align: center;
+    color: var(--sub-fg);
+    scroll-margin-top: calc(var(--nav-height) + var(--gutter-xxl));
+    font-weight: 700;
+  }
+  .prose {
+    width: 100%;
+    max-width: var(--prose-width);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+  }
+  .cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gutter-lg);
+  }
+  .price {
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
+    .disclaimer {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--sub-fg);
+    }
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+    li {
+      display: flex;
+      align-items: center;
+      gap: var(--gutter-sm);
+      font-size: 24px;
+      font-weight: 600;
+      svg {
+        fill: var(--primary);
+      }
+    }
+  }
+}
+
+.cta {
+  border: none;
+  background-color: var(--brand-600);
+  color: var(--light);
+  font-size: 18px;
+  font-weight: 600;
+  padding: var(--gutter-sm) var(--gutter-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--brand-500);
+  }
+}

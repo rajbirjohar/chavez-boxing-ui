@@ -1,0 +1,15 @@
+---
+interface Props {
+  cta?: HTMLCollection;
+  class?: string;
+}
+
+const { cta } = Astro.props;
+import styles from "./styles.module.scss";
+import cslx from "clsx";
+---
+
+<div class={cslx(styles.card, Astro.props.class)}>
+  <slot />
+  {cta && cta}
+</div>

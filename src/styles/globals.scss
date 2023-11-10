@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --light: #fff;
+  --dark: #000;
+
+  --slate-0: #fafafa;
+  --slate-1: #f4f4f5;
+  --slate-2: #e4e4e7;
+  --slate-3: #d4d4d8;
+  --slate-4: #a1a1aa;
+  --slate-5: #71717a;
+  --slate-6: #52525b;
+  --slate-7: #3f3f46;
+  --slate-8: #27272a;
+  --slate-9: #18181b;
+  --slate-10: #09090b;
+
+  --brand-50: #fef2f2;
+  --brand-100: #fee2e2;
+  --brand-200: #fecaca;
+  --brand-300: #fca5a5;
+  --brand-400: #f87171;
+  --brand-500: #ef4444;
+  --brand-600: #dc2626;
+  --brand-700: #b91c1c;
+  --brand-800: #991b1b;
+  --brand-900: #7f1d1d;
+  --brand-1000: #450a0a;
+
+  --accent: #dc9b93;
+
+  --heading-fg: var(--light);
+  --fg: var(--slate-2);
+  --sub-fg: var(--slate-4);
+  --bg: var(--slate-10);
+  --bg-rgba: rgba(9, 9, 11, 0.9);
+  --border-color: var(--slate-8);
+  --border: 1px solid var(--border-color);
+  --primary: var(--brand-500);
+  --link: var(--brand-500);
+  --highlight: #6d28d9;
+  --highlight-fg: var(--light);
+
+  --card-bg: var(--slate-9);
+
+  --main-content-width: 1268px;
+  --main-content-min-height: 100vh;
+  --prose-width: 668px;
+  --nav-height: 60px;
+
+  --border-radius: 12px;
+
+  --gutter-xxs: 2px;
+  --gutter-xs: 4px;
+  --gutter-sm: 8px;
+  --gutter: 16px;
+  --gutter-md: 24px;
+  --gutter-lg: 32px;
+  --gutter-xl: 48px;
+  --gutter-xxl: 64px;
+
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-md: 1.25rem;
+  --font-lg: 1.5rem;
+  --font-xl: 2rem;
+  --font-xxl: 3rem;
+
+  --font-sans: "Inter", "SFPro", sans-serif;
+  --font-serif: "Noto Serif", "Times New Roman", serif;
+  --font-mono: "Noto Sans Mono", "SF Mono", monospace;
+
+  --transition: 200ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 400ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slower: 600ms cubic-bezier(0.25, 1, 0.5, 1);
+  --stagger: 0;
+  --delay: 120ms;
+  --start: 0ms;
+
+  --shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
+  --nav-shadow: rgba(178, 183, 190, 0.15) 0px 5px 10px 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: var(--font-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--font-xl);
+}
+
+h2 {
+  font-size: var(--font-lg);
+}
+
+h3 {
+  font-size: var(--font-md);
+}
+
+h4 {
+  font-size: var(--font-base);
+}
+
+h5 {
+  font-size: var(--font-sm);
+}
+
+h6 {
+  font-size: var(--font-xs);
+}
+
+code,
+pre {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+  font-size: 14px;
+}
+
+pre {
+  padding: var(--gutter) var(--gutter-md);
+  border-radius: var(--border-radius);
+}
+
+a {
+  color: var(--link);
+  border-bottom: 2px solid var(--link);
+  text-decoration: none;
+}
+
+blockquote {
+  font-size: var(--font-md);
+  font-style: italic;
+  font-family: var(--font-serif);
+  text-align: center;
+  color: var(--accent);
+  max-width: 568px;
+  margin: 0 auto;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  width: 100%;
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+/* Style for ordered list numbers */
+ol li::marker {
+  color: var(--sub-fg); /* Change to your preferred color */
+}
+
+/* Style for unordered list bullets */
+ul li::marker {
+  color: var(--sub-fg); /* Change to your preferred color */
+}
+
+::selection {
+  background: var(--highlight);
+  color: var(--highlight-fg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--highlight-fg);
+}
+::-moz-selection {
+  background: var(--highlight);
+  color: var(--highlight-fg); /* WebKit/Blink Browsers */
+  -webkit-text-fill-color: var(--highlight-fg);
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}

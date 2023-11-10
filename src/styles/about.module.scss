@@ -1,0 +1,16 @@
+.article {
+  width: 100%;
+  max-width: var(--main-content-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + var(--gutter-xxl)) var(--gutter-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-md);
+  .prose {
+    width: 100%;
+    max-width: var(--prose-width);
+    & > * + * {
+      margin-block-start: 1rem;
+    }
+  }
+}

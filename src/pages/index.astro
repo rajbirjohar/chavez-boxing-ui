@@ -1,0 +1,199 @@
+---
+import Layout from "../layouts/Layout/index.astro";
+import styles from "@/styles/home.module.scss";
+import hero from "@/assets/hero.png";
+import { Image } from "astro:assets";
+import { BadgeCheck } from "lucide-astro";
+import Card from "@/core/Card/index.astro";
+import clsx from "clsx";
+---
+
+<Layout>
+  <section class={styles.hero}>
+    <div class={styles.content}>
+      <h1 id="home" class={styles.title}>
+        <span class={styles.intro}>Welcome to</span>
+        <br />
+         Chavez Boxing Gym
+      </h1>
+      <p class={styles.subtitle}>Where Grit Meets Grace</p>
+    </div>
+    <div class={styles.overlay}></div>
+    <Image
+      src={hero}
+      alt="Image of big red boxing gloves"
+      class={styles.heroimage}
+    />
+  </section>
+  <section class={styles.section}>
+    <h1 id="programs" class={styles.title}>What We Offer</h1>
+    <p class={styles.prose}>
+      We offer a variety of programs to suit your needs. Whether you're looking
+      to get in shape or train for a match, we've got you covered.
+    </p>
+    <div class={styles.cards}>
+      <Card>
+        <h2 class={styles.title}>Tailored Mastery</h2>
+        <p>
+          Step into the world of amateur boxing with guidance from the best in
+          the ring. Our program offers more than just technique; it's a
+          comprehensive journey through the art and heart of boxing.
+        </p>
+        <p>
+          You'll learn to move and think like a boxer, with rigorous training
+          that tests your limits and competitions that showcase your growing
+          prowess. Join the ranks of the devoted, where every match is a step
+          closer to glory.
+        </p>
+      </Card>
+      <Card>
+        <h2 class={styles.title}>Health and Fitness</h2>
+        <p>
+          Our health and fitness services go beyond the conventional. We don't
+          just build muscles; we craft athletes.
+        </p>
+        <p>
+          Whether you're looking to shed pounds, enhance endurance, or simply
+          lead a healthier lifestyle, our holistic approach to fitness
+          underlines strength, conditioning, and nutrition.
+        </p>
+        <p>
+          With trusted equipment and a supportive environment, we make every
+          heartbeat count towards your ultimate fitness goals.
+        </p>
+      </Card>
+      <Card>
+        <h2 class={styles.title}>Amateur Boxing</h2>
+        <p>
+          Step into the world of amateur boxing with guidance from the best in
+          the ring. Our program offers more than just technique; it's a
+          comprehensive journey through the art and heart of boxing.
+        </p>
+        <p>
+          You'll learn to move and think like a boxer, with rigorous training
+          that tests your limits and competitions that showcase your growing
+          prowess. Join the ranks of the devoted, where every match is a step
+          closer to glory.
+        </p>
+      </Card>
+    </div>
+  </section>
+  <section class={styles.section}>
+    <h1 id="pricing" class={styles.title}>Affordable Pricing</h1>
+    <p class={styles.prose}>
+      We believe that boxing should be accessible to everyone. That's why we
+      offer a variety of pricing options to suit your needs. We work with you to
+      find the best plan for your budget and schedule.
+    </p>
+    <div class={clsx(styles.cards, styles.pricing)}>
+      <Card>
+        <div class={styles.heading}>
+          <h2 class={styles.title}>Beginner Package</h2>
+          <p class={styles.price}>$220</p>
+          <p>
+            If you are new to boxing, this package is a great way to get
+            started. You'll learn the basics of boxing and get a feel for the
+            sport.
+          </p>
+          <ul class={styles.list}>
+            <li class={styles.item}><BadgeCheck /> Two classes per week</li>
+            <li class={styles.item}><BadgeCheck /> One-on-one training</li>
+            <li class={styles.item}><BadgeCheck /> Free gym access</li>
+          </ul>
+        </div>
+      </Card>
+      <Card>
+        <div class={styles.heading}>
+          <h2 class={styles.title}>Intermediate Package</h2>
+          <p class={styles.price}>$300</p>
+          <p>
+            If you're looking to increase your skill level, this package is for
+            you. Increased training will help you hone your technique and
+            prepare you for the ring.
+          </p>
+          <ul class={styles.list}>
+            <li class={styles.item}><BadgeCheck /> Three classes per week</li>
+            <li class={styles.item}><BadgeCheck /> One-on-one training</li>
+            <li class={styles.item}><BadgeCheck /> Free gym access</li>
+          </ul>
+        </div>
+      </Card>
+      <Card>
+        <div class={styles.heading}>
+          <h2 class={styles.title}>Bundle Package</h2>
+          <p class={styles.price}>
+            $200<span class={styles.disclaimer}> per person</span>
+          </p>
+          <p>
+            Want to bring a friend? This package is perfect for you. You'll get
+            to train together and push each other to the next level.
+          </p>
+          <ul class={styles.list}>
+            <li class={styles.item}><BadgeCheck /> Discount for two people</li>
+            <li class={styles.item}><BadgeCheck /> One-on-one training</li>
+            <li class={styles.item}><BadgeCheck /> Free gym access</li>
+          </ul>
+        </div>
+      </Card>
+    </div>
+    <p class={styles.prose}>
+      If you would like to train with Head Coach Pete, rates start at
+      <strong>$275</strong> for <strong>eight sessions</strong>.
+    </p>
+  </section>
+  <section class={styles.section}>
+    <h1 class={styles.title}>Join The Family</h1>
+    <p
+      class={styles.prose}
+      style={{
+        textAlign: "left",
+      }}
+    >
+      Step into Chavez Boxing Gym and feel the pulse of legacy - a space where
+      each punch and every bead of sweat writes a story of determination. Here,
+      we strip away the superfluous and focus on what truly matters: the power
+      of community, the respect for straightforward hard work, and the
+      commitment to personal excellence.
+    </p>
+    <p
+      class={styles.prose}
+      style={{
+        textAlign: "left",
+      }}
+    >
+      In our haven for hard hitters, fancy frills don't make the fighter -
+      tenacity does. Under the glow of bare bulbs and echoed in the rhythm of
+      speed bags, you'll find a community forged in the fire of shared struggle
+      and mutual support. We're not just a gym; we're a close-knit family that
+      grows stronger together, with every session and every challenge met
+      head-on.
+    </p>
+    <p
+      class={styles.prose}
+      style={{
+        textAlign: "left",
+      }}
+    >
+      Our doors are open to those who have the heart to step into the ring of
+      life with unflinching courage. Whether you're lacing up gloves for the
+      first time or you're a seasoned contender, here is where you'll be honed
+      and tested, where you'll learn that being a champion starts with showing
+      up - for yourself and for your team.
+    </p>
+    <p class={styles.prose}>
+      <strong>
+        Take the step. Commit to the core of boxing. No fluff, no distractions -
+        just you, the bag, and a band of brothers and sisters who will never let
+        you down.
+      </strong>
+    </p>
+    <a
+      href="#contact"
+      style={{
+        border: "none",
+      }}
+    >
+      <button class={styles.cta}>Step Into The Ring</button>
+    </a>
+  </section>
+</Layout>

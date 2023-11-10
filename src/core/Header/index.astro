@@ -1,0 +1,40 @@
+---
+import styles from "./styles.module.scss";
+
+const directories = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Programs",
+    path: "#programs",
+  },
+  {
+    name: "Pricing",
+    path: "#pricing",
+  },
+  {
+    name: "Recipes",
+    path: "/recipes",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Contact",
+    path: "#contact",
+  },
+];
+---
+
+<header class={styles.header}>
+  <nav class={styles.nav}>
+    {
+      directories.map((directory) => (
+        <a href={directory.path}>{directory.name}</a>
+      ))
+    }
+  </nav>
+</header>

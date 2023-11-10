@@ -1,0 +1,12 @@
+.card {
+  background-color: var(--card-bg);
+  padding: var(--gutter-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  & > * + * {
+    margin-block-start: 1rem;
+  }
+  .title {
+    text-align: center;
+  }
+}

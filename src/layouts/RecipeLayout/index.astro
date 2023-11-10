@@ -1,0 +1,57 @@
+---
+interface Props {
+  recipe: {
+    title: string;
+    description: string;
+    ingredients_html: string;
+    instructions_html: string;
+  };
+}
+
+const { recipe } = Astro.props;
+
+import { ViewTransitions } from "astro:transitions";
+import Header from "@/core/Header/index.astro";
+import Footer from "@/core/Footer/index.astro";
+import styles from "./styles.module.scss";
+import "@/styles/globals.scss";
+import { ArrowLeftToLine } from "lucide-astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={recipe.description} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width" />
+    <title>Chavez Boxing Gym {recipe.title && `| ${recipe.title}`}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <main class={styles.main}>
+      <article class={styles.article}>
+        <header class={styles.header}>
+          <a href="/recipes" class={styles.back}>
+            <ArrowLeftToLine size={20} />
+             Back to Recipes
+          </a>
+          <h1 set:html={recipe.title} class={styles.title} />
+          <p set:html={recipe.description} class={styles.description} />
+        </header>
+        <hr />
+        <section class={styles.section}>
+          <h2>Ingredients</h2>
+          <div set:html={recipe.ingredients_html} />
+        </section>
+        <section class={styles.section}>
+          <h2>Instructions</h2>
+          <div set:html={recipe.instructions_html} />
+        </section>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

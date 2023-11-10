@@ -1,0 +1,33 @@
+---
+interface Recipe {
+  id: string;
+  title: string;
+  description: string;
+  ingredients_html: string;
+  instructions_html: string;
+}
+
+const { recipe } = Astro.props;
+
+import RecipeLayout from "@/layouts/RecipeLayout/index.astro";
+
+export async function getStaticPaths() {
+  let data = await fetch(`
+  ${import.meta.env.PAYLOAD_API_URL}/recipes  
+`);
+  let recipes = await data.json();
+
+  const paths = recipes.docs.map((recipe: Recipe) => {
+    return {
+      params: { id: recipe.id },
+      props: {
+        recipe: recipe,
+      },
+    };
+  });
+
+  return paths;
+}
+---
+
+<RecipeLayout recipe={recipe} />

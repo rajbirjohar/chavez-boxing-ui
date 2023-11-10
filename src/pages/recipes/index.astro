@@ -1,0 +1,41 @@
+---
+type Recipe = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+import Layout from "@/layouts/Layout/index.astro";
+import styles from "@/styles/recipes.module.scss";
+
+const res = await fetch(`
+    ${import.meta.env.PAYLOAD_API_URL}/recipes
+`);
+const recipes = await res.json();
+---
+
+<Layout title="Recipes">
+  <article class={styles.article}>
+    <h1>Recipes</h1>
+    <p class={styles.prose}>
+      In the ring and in life, the right nutrition can make all the difference.
+      That's why our coach doesn't just train your body; they feed your ambition
+      with a collection of healthy, easy-to-prepare recipes designed to keep you
+      fighting fit. Each dish is packed with the nutrients you need to recover
+      from a hard session, build muscle, and maintain energy levels throughout
+      the day.
+    </p>
+    <div class={styles.recipes}>
+      {
+        recipes.docs.map((recipe: Recipe) => (
+          <div class={styles.recipe}>
+            <a href={`/recipes/${recipe.id}`}>
+              <h2 set:html={recipe.title} class={styles.title} />
+            </a>
+            <p set:html={recipe.description} class={styles.description} />
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</Layout>

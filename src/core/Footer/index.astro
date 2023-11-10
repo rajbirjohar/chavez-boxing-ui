@@ -1,0 +1,47 @@
+---
+import styles from "./styles.module.scss";
+import { Phone, Mail, Facebook, Instagram } from "lucide-astro";
+---
+
+<footer class={styles.footer} id="contact">
+  <div class={styles.content}>
+    <div class={styles.column}>
+      <h3>Location</h3>
+      <address>2952 N 16th St, Phoenix, AZ 85016</address>
+    </div>
+    <div class={styles.column}>
+      <h3>Hours</h3>
+      <ul class={styles.hours}>
+        <li class={styles.day}><span>Mon</span> Fri: 2 - 9:30pm</li>
+        <li class={styles.day}><span>Sat</span> 12 - 4:30pm</li>
+        <li class={styles.day}><span>Sun</span> Closed</li>
+      </ul>
+    </div>
+    <div class={styles.column}>
+      <h3>Contact</h3>
+      <div>
+        <a href="tel:602-277-5662" class={styles.link}>
+          <Phone />
+           623-206-2639
+        </a>
+        <a class={styles.link}>
+          <Mail />
+           chavez_boxing@yahoo.com
+        </a>
+      </div>
+    </div>
+    <div class={styles.column}>
+      <h3>Socials</h3>
+      <div>
+        <a class={styles.link}>
+          <Facebook />
+           Facebook
+        </a>
+        <a class={styles.link}>
+          <Instagram />
+           Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

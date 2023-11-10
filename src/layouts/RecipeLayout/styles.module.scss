@@ -1,0 +1,30 @@
+.main {
+  width: 100%;
+  max-width: var(--main-content-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + var(--gutter-xxl)) var(--gutter-md);
+  .article {
+    width: 100%;
+    max-width: var(--prose-width);
+    & > * + * {
+      margin-block-start: 1rem;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gutter);
+      .back {
+        display: flex;
+        align-items: center;
+        gap: var(--gutter-sm);
+        width: max-content;
+        border: none;
+      }
+    }
+    .section {
+      & > * + * {
+        margin-block-start: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+import Header from "@/core/Header/index.astro";
+import Footer from "@/core/Footer/index.astro";
+import styles from "./styles.module.scss";
+import "@/styles/globals.scss";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="
+        Chavez Boxing Gym is a boxing gym located in the heart of Downtown Phoenix. 
+        We offer boxing classes for all ages and skill levels. We focus on 
+        teaching the fundamentals of boxing and self-defense. We also offer
+        personal training and private lessons.
+      "
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width" />
+    <title>Chavez Boxing Gym {title && `| ${title}`}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <main class={styles.main}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
