@@ -12,7 +12,7 @@ import { Phone, Mail, Facebook, Instagram, ExternalLink } from "lucide-astro";
         <address>2952 N 16th St, Phoenix, AZ 85016</address>
         <h3>Hours</h3>
         <ul class={styles.hours}>
-          <li class={styles.day}><span>Mon</span> Fri: 2 - 9:30pm</li>
+          <li class={styles.day}><span>Mon-Fri:</span> 2 - 9:30pm</li>
           <li class={styles.day}><span>Sat</span> 12 - 4:30pm</li>
           <li class={styles.day}><span>Sun</span> Closed</li>
         </ul>
@@ -27,11 +27,23 @@ import { Phone, Mail, Facebook, Instagram, ExternalLink } from "lucide-astro";
           <Mail />
            chavez_boxing@yahoo.com
         </a>
-        <a class={styles.link}>
+        <a
+          class={styles.link}
+          class={styles.link}
+          href="https://www.chavezyouth.org/" 
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Facebook />
            Facebook
         </a>
-        <a class={styles.link}>
+        <a
+          class={styles.link}
+          class={styles.link}
+          href="https://www.chavezyouth.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Instagram />
            Instagram
         </a>
