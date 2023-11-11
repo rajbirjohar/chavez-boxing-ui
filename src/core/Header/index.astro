@@ -52,17 +52,29 @@ const directories = [
     const toggle = document.querySelector("#toggle");
     const header = document.querySelector("#header");
 
+    const threshold = 50;
+
     // Select each link to close the menu when clicked
     const links = document.querySelectorAll("#link");
-    
+
     links.forEach((link) => {
       link.addEventListener("click", () => {
         header.classList.remove(`${styles.active}`);
       });
     });
 
+    // Add active class on button click
     toggle.addEventListener("click", () => {
       header.classList.toggle(`${styles.active}`);
+    });
+
+    // Add scroll class on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > threshold) {
+        header.classList.add(`${styles.scroll}`);
+      } else {
+        header.classList.remove(`${styles.scroll}`);
+      }
     });
   });
 </script>
